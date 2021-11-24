@@ -34,3 +34,20 @@ lg.fit(x_train,y_train)
 y_pred = lg.predict(x_test)
 
 """
+
+"""
+# Gaussian Naive Bayes
+
+gnb = GaussianNaiveBayes()
+
+X , y = make_classification(n_classes=2 , n_features=8 , n_samples=1000 )
+
+x_train , x_test , y_train , y_test = train_test_split(X , y ,test_size=0.3)
+
+gnb.fit(x_train , y_train)
+
+y_pred = gnb.predict(x_test)
+
+print(accuracy(y_pred,y_test))
+
+""""

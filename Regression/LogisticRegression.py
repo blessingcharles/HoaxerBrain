@@ -1,18 +1,11 @@
 import numpy as np
 from pandas.core.indexing import convert_from_missing_indexer_tuple
+from Regression import BaseRegression
 
 from Regression.utils import logg_loss, sigmoid
 
-class LogisticRegression:
-    def __init__(self ,epochs : int = 1000 , lr : int = 0.01 , verbose : bool = False , bias : int = 0) -> None:
-        self.epochs = epochs
-        self.lr = lr
-        self.verbose = verbose
-        self.bias = bias
-        self.cost_list = []
-        self.epoch_list = []
-        self.note_epoch = 10
-
+class LogisticRegression(BaseRegression):
+    
     def fit(self , X_train : np.ndarray, y_train : np.ndarray):
         self.X : np.ndarray = X_train 
         self.y : np.ndarray = y_train

@@ -1,13 +1,10 @@
 class BaseRegression:
     
-    def __init__(self , epochs : int , lr : int , verbose : bool , bias : int) -> None:
+    def __init__(self ,epochs : int = 1000 , lr : int = 0.01 , verbose : bool = False , bias : int = 0) -> None:
         self.epochs = epochs
         self.lr = lr
         self.verbose = verbose
         self.bias = bias
-    
-    def predict(self,y_test):
-        return self._predict
-
-    def _predict(self,y_test):
-        raise NotImplementedError
+        self.cost_list = []
+        self.epoch_list = []
+        self.note_epoch = 10

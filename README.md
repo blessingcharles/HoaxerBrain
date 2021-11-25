@@ -51,3 +51,22 @@ y_pred = gnb.predict(x_test)
 print(accuracy(y_pred,y_test))
 
 """"
+
+""""
+
+# PERCEPTRON 
+
+
+p = Perceptron(epochs=100)
+
+X , y = datasets.make_blobs(n_samples=800 , n_features=2 , centers=2)
+print(np.unique(y))
+x_train , x_test , y_train , y_test = train_test_split(X , y ,test_size=0.3)
+
+p.fit(x_train,y_train)
+y_pred = p.predict(x_test)
+
+print(accuracy(y_test , y_pred))
+
+
+""""

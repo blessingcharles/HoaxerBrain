@@ -7,7 +7,9 @@ from sklearn.datasets import make_classification
 from sklearn.preprocessing import MinMaxScaler
 
 from sklearn.model_selection import train_test_split
+from Classification.DecisionTree import DecisionTree
 from Classification.Perceptron import Perceptron
 
 from Regression.utils import accuracy
+
 

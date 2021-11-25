@@ -70,3 +70,21 @@ print(accuracy(y_test , y_pred))
 
 
 """"
+
+"""
+# DECISION TREE (ID3 ALGORITHM) 
+
+cancer = datasets.load_breast_cancer()
+
+X , y = cancer.data , cancer.target
+
+x_train , x_test , y_train , y_test = train_test_split(X , y , test_size=0.3)
+dt = DecisionTree()
+
+dt.fit(x_train , y_train)
+
+y_pred  = dt.predict(x_test)
+
+print(accuracy(y_test , y_pred))
+
+"""

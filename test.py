@@ -1,20 +1,16 @@
-from types import new_class
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn import datasets
-from sklearn.datasets import make_classification
-from sklearn.preprocessing import MinMaxScaler
 
-from sklearn.model_selection import train_test_split
-from Classification.DecisionTree import DecisionTree
-from Classification.Perceptron import Perceptron
-from Decomposition.PCA import PCA
+from sklearn.datasets import make_blobs
 
-from Regression.utils import accuracy
+from clustering.Kmeans import KMeans
 
+X, y = make_blobs(
+    centers=3, n_samples=500, n_features=2, shuffle=True, random_state=40
+)
+print(X.shape)
+clusters = len(np.unique(y))
+print(clusters)
+k = KMeans(K=clusters, epochs=150)
 
-import matplotlib.pyplot as plt
-from sklearn import datasets
-
-
+y_pred = k.predict(X)
+k.plot()

@@ -88,3 +88,17 @@ y_pred  = dt.predict(x_test)
 print(accuracy(y_test , y_pred))
 
 """
+
+"""
+# PRINCIPAL COMPONENT ANALYSIS
+
+data = load_iris()
+X = data.data
+y = data.target
+pca = PCA(2)
+pca.fit(X)
+X_projected = pca.transform(X)
+print("Shape of X:", X.shape)
+print("Shape of transformed X:", X_projected.shape)
+
+"""

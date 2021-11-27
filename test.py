@@ -1,16 +1,8 @@
 import numpy as np
 
-from sklearn.datasets import make_blobs
-
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from Regression.utils import accuracy
 from clustering.Kmeans import KMeans
+from ensemble.Adaboost import Adaboost
 
-X, y = make_blobs(
-    centers=3, n_samples=500, n_features=2, shuffle=True, random_state=40
-)
-print(X.shape)
-clusters = len(np.unique(y))
-print(clusters)
-k = KMeans(K=clusters, epochs=150)
-
-y_pred = k.predict(X)
-k.plot()

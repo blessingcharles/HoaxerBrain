@@ -102,3 +102,21 @@ print("Shape of X:", X.shape)
 print("Shape of transformed X:", X_projected.shape)
 
 """
+
+"""
+# ADABOOST
+
+data = datasets.load_breast_cancer()
+X, y = data.data, data.target
+y[y == 0] = -1
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=5
+)
+clf = Adaboost(n_classifiers=10)
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+acc = accuracy(y_test, y_pred)
+print("Accuracy:", acc)
+
+
+"""

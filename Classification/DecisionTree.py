@@ -1,8 +1,6 @@
 import numpy as np
 from collections import Counter
 
-from numpy.lib.arraysetops import unique
-
 from Classification.utils import entropy
 
 class Node:
@@ -121,5 +119,8 @@ class DecisionTree:
         return left_idx , right_idx
 
     def __most_common_label(self , samples):
-        counter = Counter(samples)
-        return counter.most_common(1)[0][0]
+        try:
+            counter = Counter(samples)
+            return counter.most_common(1)[0][0]
+        except:
+            return 0
